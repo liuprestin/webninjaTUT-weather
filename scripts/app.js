@@ -1,4 +1,4 @@
-
+// app.js 
 const cityForm = document.querySelector('form');
 const card = document.querySelector('.card');
 const details = document.querySelector('.details');
@@ -8,11 +8,10 @@ const icon = document.querySelector('.icon img');
 const updateUI = (data) => {
 
     //destructured syntax
-    const { cityDets, weather} = data; //ok honestly really is weird because the assignment of variables is backwards...
-/* equivelent to:
-const cityDets = data.cityDets;
-const weather = data.weather; */
-
+    /* equivelent to:
+    const cityDets = data.cityDets;
+    const weather = data.weather; */
+    const { cityDets, weather} = data; 
 
     //update details template
     details.innerHTML = `
@@ -24,7 +23,7 @@ const weather = data.weather; */
             </div>
     `;
 
-    //upadet the night/day and icon images
+    //update the night/day and icon images
 
     const iconSrc = `img/icons/${weather.WeatherIcon}.svg`;
     icon.setAttribute('src', iconSrc);
